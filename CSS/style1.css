@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Body */
+.BodyHead {
+  font-weight: bolder;
+  font-size: 46px;
+  color: rgba(4, 209, 4, 0.718);
+  text-shadow: 5px 2px 8px rgba(123, 123, 123, 0.614);
+
+}
+
+#FeaturedSection{
+  background-color: rgb(247, 247, 247);
+}
+
+.OwlCard2{
+  padding: 10px;
+}
+
+.OwlRow{
+  font-weight:lighter ;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Testimonials */
+.card{
+  
+  border:none;
+}
+
+.user-content p{
+  margin-top:5px;
+  font-size:12px;
+}
+
+
+.ratings i{
+  color:blue;
+}
+
+
+/* Footer */
+
+
+#Footer a{
+  text-decoration: none;
+  color: rgb(145, 153, 145);
+}
+
+.AnchorLinks a:hover{
+  color: white;
+}

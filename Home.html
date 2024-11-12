@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Plant Palace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="./assets/favicon/plant.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/style1.css">
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Owl Car -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  
+  <!-- Owl Carousel -->
+  <header>
+    <a href="gallery.html" style="cursor: pointer;user-select: none;position: relative;" class="logo-container text-white"><span class="logo-p">P</span>LANT<br>ALACE<img src="assets/images/plant.png" width="85" class="logo d-inline" style="position: absolute; top: -25px; right: -66px;" alt=""></a>
+    <nav>
+        <div class="navbar">
+            <button class="dropdown btn text-white" type="button" data-bs-toggle="dropdown" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <label class="hamburger">
+                    <!-- <input type="checkbox"> -->
+                    <svg viewBox="0 0 32 32">
+                      <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                      <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                  </label> MENU
+                </button>
+              <div class="nav-dropdown" id="navbarNavAltMarkup">
+                <div class="dropdown-menu">
+                  <ul class="dropdown-item list-unstyled category" href="#">
+                    <span class="category-name">Home</span>
+                        <a href="#Catogries"><li class="cat-item">Top Catogries</li></a>
+                        <a href="#FeaturedSection"><li class="cat-item">Featured</li></a>
+                        <a href="#Testimonials"><li class="cat-item">Overview</li></a>
+                        <a href="#SpecialSection"><li class="cat-item">Specials</li></a>
+                  </ul>
+                  <ul class="dropdown-item list-unstyled category" href="#">
+                    <span class="category-name">Gallery</span>
+                        <a href="gallery.html"><li class="cat-item">Nursery</li></a>
+                        <a href="gallery.html#indoor"><li class="cat-item">Indoor Plants</li></a>
+                        <a href="gallery.html#outdoor"><li class="cat-item">Outdoor Plants</li></a>
+                        <a href="gallery.html#flower"><li class="cat-item">Flowering Shrubs</li></a>
+                  </ul>
+                  <ul class="dropdown-item list-unstyled category" href="#">
+                    <span class="category-name">Site Links</span>
+                        <a href="AboutUs.html"><li class="cat-item">About Us</li></a>
+                        <a href="register.html"><li class="cat-item">Register</li></a>
+                        <a href="Login.html"><li class="cat-item">Login</li></a>
+                        <a href="#sitemap.html"><li class="cat-item">Sitemap</li></a>
+                  </ul>
+                </div>
+              </div>
+        </div>
+    </nav>
+    <div class="buttons">
+        <span class="account">
+            <a class="dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"  class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                </svg>
+            </a>
+            <ul class="dropdown-menu mt-4">
+              <li><a class="dropdown-item" href="register.html">Register</a></li>
+              <li><a class="dropdown-item" href="login.html">Log in</a></li>
+              <li><a class="dropdown-item" href="feedback.html">Feedback</a></li>
+            </ul>
+        </span>
+        <span id="cart" class="mx-3 my-2">
+            <span id="filter" data-bs-toggle="offcanvas" data-bs-target="#orderCart">
+                <!-- <img class="cart-streaks" src="img/menu.png" width="19" alt=""> -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                </svg>
+            </span>
+        </span>
+    </div>
+
+  </header> 
+    
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+            
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+        
+              <div class="carousel-item active">
+                <img src="assets/Carou1.jpg"  class="d-block" style="width:100%">
+                <div class="carousel-caption">
+                    <h3>IWC</h3>
+                    <p>We have such a great collection</p>
+                  </div>
+                </div>
+        
+              <div class="carousel-item">
+                <img src="assets/Carou2.jpg"  class="d-block" style="width:100%">
+                <div class="carousel-caption">
+                    <h3>IWC</h3>
+                    <p>Experience the luxuries of iwc</p>
+                  </div>
+              </div>
+        
+            </div>
+            
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+        
+    </div>
+
+    <!-- Top Catogries -->
+    <div class="container text-center mt-5" id="Catogries">
+      <div class="row">
+        <div class="col-md-12 mt-5 mb-5">
+          <img src="assets/images/plant.png" alt="" height="60px" width="60px">
+          <h2 class="BodyHead">Top Categories</h2>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="owl-carousel owl-theme">
+          <!-- Item1 -->
+          <div class="item">
+            <div class="card">
+                <img src="assets/AssortedShrub.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title">Assorthed Shrub</h3>
+                </div>
+            </div>
+          </div>
+          <!-- Item2 -->
+          <div class="item">
+            <div class="item">
+              <div class="card">
+                  <img src="assets/CanyonCreek.jpg" class="card-img-top">
+                  <div class="card-body">
+                      <h3 class="card-title">Canyon Creek</h3>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item3 -->
+          <div class="item">
+            <div class="item">
+              <div class="card">
+                  <img src="assets/GoldenKing.jpg" class="card-img-top">
+                  <div class="card-body">
+                      <h3 class="card-title">Golden King</h3>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item4 -->
+          <div class="item">
+            <div class="item">
+              <div class="card">
+                  <img src="assets/AssortedShrub.jpg" class="card-img-top">
+                  <div class="card-body">
+                      <h3 class="card-title">Assorted Shrub</h3>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item5 -->
+          <div class="item">
+            <div class="item">
+              <div class="card">
+                  <img src="assets/MardiGras.jpg" class="card-img-top">
+                  <div class="card-body">
+                      <h3 class="card-title">Mardi Grass</h3>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item6 -->
+          <div class="item">
+            <div class="item">
+              <div class="card">
+                  <img src="assets/RoseGreek.jpg" class="card-img-top">
+                  <div class="card-body">
+                      <h3 class="card-title">Rose Greek</h3>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                      
+    </div>
+
+    <!-- Featured Section -->
+     <div class="container-fluid mt-5" id="FeaturedSection">
+      <div class="row">
+        <div class="col-md-4 ">
+          <img src="assets/sale.jpg" alt="" class="h=100 w-100">
+        </div>
+        <div class="col-md-8 px-3 py-5" >
+          <div class="row text-center">
+            <div class="col-md-12">
+              <img src="assets/images/plant.png" height="60px" width="60px">
+              <h1 class="BodyHead">Featured</h1>
+            </div>
+            <div class="row" id="FeaturedSection" >
+              <div class="owl-carousel owl-theme mt-5">
+                <!-- Item1 -->
+                <div class="item OwlRow">
+                    <div class="card">
+                        <img src="assets/1.jpg" class="card-img-top OwlCard2" height="350px">
+                        <div class="card-body">
+                          <h6 class="card-title">aspetur autodit autfugit</h6>
+                          <p class="Cotation"><i><b><emp>$98.00</emp></b> <del>$110.00</del></i></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item2 -->      
+                <div class="item">
+                  <div class="card">
+                    <img src="assets/2.jpg" class="card-img-top OwlCard2 " height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">magni dolores eosquies</h6>
+                        <p class="Cotation"><i><b><emp>$98.00</emp></b> <del>$110.00</del></i></p>
+                    </div>
+                </div>
+                </div>
+                <!-- Item3 -->
+                <div class="item">
+                  <div class="card">
+                    <img src="assets/3.jpg" class="card-img-top OwlCard2" height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">similique suntin culpaa..</h6>
+                        <p class="Cotation"><i><b><emp>$26.00</emp></b> <del>$65.00</del></i></p>
+                    </div>
+                </div>
+                </div>
+                <!-- Item4 -->
+                <div class="item">
+                  <div class="card">
+                    <img src="assets/4.jpg" class="card-img-top OwlCard2" height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">sint incidunt utlabore</h6>
+                        <p class="Cotation"><i><b><emp>$26.00</emp></b> <del>$122.00</del></i></p>
+                    </div>
+                </div>
+                </div>
+                <!-- Item5 -->
+                <div class="item">
+                  <div class="card">
+                    <img src="assets/5.jpg" class="card-img-top OwlCard2" height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">susipit laboriosum nisi</h6>
+                        <p class="Cotation"><i><b><emp>$337.9</emp></b> <del>$122.00</del></i></p>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Item6 -->
+                <div class="item">
+                  <div class="card">
+                    <img src="assets/6.jpg" class="card-img-top OwlCard2" height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">aliquam quaerat volup..</h6>
+                        <p class="Cotation"><i><b><emp>$80.00</emp></b> <del>$122.00</del></i></p>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Item7 -->
+                 <div class="item">
+                  <div class="card">
+                    <img src="assets/7.jpg" class="card-img-top OwlCard2" height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">aliquam quaerat insitera </h6>
+                        <p class="Cotation"><i><b><emp>$100.00</emp></b> <del>$122.00</del></i></p>
+                    </div>
+                </div>
+                 </div>
+
+                 <!-- Item8 -->
+                  <div class="item">
+                    <div class="card">
+                      <img src="assets/8.jpg" class="card-img-top OwlCard2" height="350px">
+                      <div class="card-body">
+                          <h6 class="card-title">aliquam ominqzi insitera</h6>
+                          <p class="Cotation"><i><b><emp>$110.00</emp></b> <del>$122.00</del></i></p>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+
+     <!-- Testimonials -->
+     <div class="container mt-5 mb-5" id="Testimonials">
+      
+      <div class="row">
+        <div class="col-md-12 text-center mb-5">
+          <img src="assets/images/plant.png" height="60px" width="60px">
+          <h1 class="BodyHead">Testimonials</h1>
+        </div>
+      </div>
+      <div class="row g-2 px-4 py-4" style="border: 2px solid rgb(188, 188, 188);">
+          <div class="col-md-4">
+              <div class="card p-3 text-center px-4">
+                  
+                  <div class="user-image">
+                      
+              <img src="https://i.imgur.com/PKHvlRS.jpg" class="rounded-circle" width="80"
+                      >
+                      
+                  </div>
+                  
+                  <div class="user-content">
+                      
+                      <h5 class="mb-0">Bruce Hardy</h5>
+                      <span>Software Developer</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      
+                  </div>
+                  
+                  <div class="ratings">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      
+                  </div>
+                  
+              </div>
+          </div>
+          
+          <div class="col-md-4">
+              
+              <div class="card p-3 text-center px-4">
+                  
+                  <div class="user-image">
+                      
+              <img src="https://i.imgur.com/w2CKRB9.jpg" class="rounded-circle" width="80"
+                      >
+                      
+                  </div>
+                  
+                  <div class="user-content">
+                      
+                      <h5 class="mb-0">Mark Smith</h5>
+                      <span>Web Developer</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      
+                  </div>
+                  
+                  <div class="ratings">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      
+                  </div>
+                  
+              </div>
+              
+          </div>
+          
+          <div class="col-md-4">
+              
+              <div class="card p-3 text-center px-4">
+                  
+                  <div class="user-image">
+                      
+              <img src="https://i.imgur.com/ACeArwY.jpg" class="rounded-circle" width="80"
+                      >
+                      
+                  </div>
+                  
+                  <div class="user-content">
+                      
+                      <h5 class="mb-0">Veera  Duncan</h5>
+                      <span>Software Architect</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      
+                  </div>
+                  
+                  <div class="ratings">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      
+                  </div>
+                  
+              </div>
+              
+          </div>
+          
+          
+      </div>
+      
+    </div>
+
+    <!-- Special Sectionn -->
+    <div class="container-fluid mt-5" id="SpecialSection">
+      <div class="row">
+        <div class="col-md-8 px-3 py-5" >
+          <div class="row text-center">
+            <div class="col-md-12">
+              <img src="assets/images/plant.png" height="60px" width="60px">
+              <h1 class="BodyHead">Special</h1>
+            </div>
+            <div class="row" id="FeaturedSection" >
+              <div class="owl-carousel owl-theme mt-5">
+                <!-- Item1 -->
+                <div class="item OwlRow">
+                    <div class="card">
+                        <img src="assets/1.jpg" class="card-img-top OwlCard2" height="350px">
+                        <div class="card-body">
+                          <h6 class="card-title">aspetur autodit autfugit</h6>
+                          <p class="Cotation"><i><b><emp>$98.00</emp></b> <del>$110.00</del></i></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item2 -->      
+                <div class="item">
+                  <div class="card">
+                    <img src="assets/2.jpg" class="card-img-top OwlCard2 " height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">magni dolores eosquies</h6>
+                        <p class="Cotation"><i><b><emp>$98.00</emp></b> <del>$110.00</del></i></p>
+                    </div>
+                </div>
+                </div>
+                <!-- Item3 -->
+                <div class="item">
+                  <div class="card">
+                    <img src="assets/3.jpg" class="card-img-top OwlCard2" height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">similique suntin culpaa..</h6>
+                        <p class="Cotation"><i><b><emp>$26.00</emp></b> <del>$65.00</del></i></p>
+                    </div>
+                </div>
+                </div>
+                <!-- Item4 -->
+                <div class="item">
+                  <div class="card">
+                    <img src="assets/4.jpg" class="card-img-top OwlCard2" height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">sint incidunt utlabore</h6>
+                        <p class="Cotation"><i><b><emp>$26.00</emp></b> <del>$122.00</del></i></p>
+                    </div>
+                </div>
+                </div>
+                <!-- Item5 -->
+                <div class="item">
+                  <div class="card">
+                    <img src="assets/5.jpg" class="card-img-top OwlCard2" height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">susipit laboriosum nisi</h6>
+                        <p class="Cotation"><i><b><emp>$337.9</emp></b> <del>$122.00</del></i></p>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Item6 -->
+                <div class="item">
+                  <div class="card">
+                    <img src="assets/6.jpg" class="card-img-top OwlCard2" height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">aliquam quaerat volup..</h6>
+                        <p class="Cotation"><i><b><emp>$80.00</emp></b> <del>$122.00</del></i></p>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Item7 -->
+                 <div class="item">
+                  <div class="card">
+                    <img src="assets/7.jpg" class="card-img-top OwlCard2" height="350px">
+                    <div class="card-body">
+                        <h6 class="card-title">aliquam quaerat insitera </h6>
+                        <p class="Cotation"><i><b><emp>$100.00</emp></b> <del>$122.00</del></i></p>
+                    </div>
+                </div>
+                 </div>
+
+                 <!-- Item8 -->
+                  <div class="item">
+                    <div class="card">
+                      <img src="assets/8.jpg" class="card-img-top OwlCard2" height="350px">
+                      <div class="card-body">
+                          <h6 class="card-title">aliquam ominqzi insitera</h6>
+                          <p class="Cotation"><i><b><emp>$110.00</emp></b> <del>$122.00</del></i></p>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <img src="assets/sale.jpg" alt="" class="h=100 w-100">
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid" id="Footer">
+      <footer>
+          <div class="container mt-5 py-5" >
+              <div class="row mt-5" >
+                  <div class="col-md-3 text-center">
+                      <a href="#" class="logo-container"><span class="logo-p">P</span>LANT<br>ALACE<img src="assets/images/plant.png" width="85" class="logo d-inline" style="position: absolute; top: -25px; right: -72px;" alt=""></a>
+                      <p class="text-white mt-3">Majority have suffered alteration in some form, by nature.</p>
+                  </div>
+                  <div class="col-md-3 AnchorLinks">
+                      <h3 class="text-white">Site Links</h3>
+                      <a href="Home.html" class="nav-link">Home</a>
+                      <a href="gallery.html" class="nav-link">Gallery</a>
+                      <a href="Aboutus.html" class="nav-link">About Us</a>
+                      <a href="#" class="nav-link">Site Map</a>
+                      <a href="register.html" class="nav-link">Contact Us</a>
+                      
+                      
+                  </div>
+                  <div class="col-md-3 AnchorLinks">
+                      <h3 class="text-white">My Account</h3>
+                      <a href="login.html" class="nav-link">Log In</a>
+                      <a href="register.html" class="nav-link">Register</a>
+                      <a href="feedback.html" class="nav-link">Feedback</a>
+                      <a href="#" class="nav-link">Newsletter</a>
+                      <a href="#" class="nav-link">Returns</a>
+                  </div>
+                  <div class="col-md-3 AnchorLinks">
+                      <h3 class="text-white">Store Information</h3>
+                      <a href="#" class="nav-link">Demo Store<br>United States</a>
+                      <a href="#" class="nav-link">+92 6658 7114 000 </a>
+                      <a href="#" class="nav-link">Dem@info</a>
+                  </div>
+              </div>
+
+              <div class="row text-center mt-5 mb-5">
+                  <div class="col-md-12">
+                      <a href=""><i><img src="assets/google.png" alt=""></i></a>   
+                      <a href=""><i><img src="assets/maestro.png" alt=""></i></a>   
+                      <a href=""><i><img src="assets/paypal.png" alt=""></i></a>   
+                      <!-- <a href=""><i><img src="assets/visa.png" alt=""></i></a>    -->
+
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12 text-center">
+                      <p class="text-white">Powered By OpenCart Your Store @ 2024</p>
+                  </div>
+              </div>
+              <div class="row text-center" style="background-color: rgba(14, 14, 14, 0.699); border-radius: 20px; padding: 5px;">
+                  <div class="col-md-3">
+                      <a target="_blank" href="https://www.facebook.com/login/" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                        </svg></a>
+                  </div>
+                  <div class="col-md-3">
+                      <a target="_blank" href="https://twitter.com/login" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                          <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h3.36L4.323 2.145H2.865z"/>
+                        </svg></a>
+                  </div>
+                  <div class="col-md-3">
+                      <a target="_blank" href="https://www.google.com.pk/" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                          <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                        </svg></a>
+                  </div>
+                  <div class="col-md-3">
+                      <a target="_blank" href="https://www.instagram.com/accounts/login/" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg></a>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  </div>
+
+
+    <!-- CART -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="orderCart">
+      <div class="offcanvas-header">
+        <h3 class="offcanvas-title">Cart</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div id="cart-items">
+        </div>
+        <div id="total-amount" class="text-success"></div>
+      </div>
+      <div class="offcanvas-footer d-grid">
+          <button class="btn mx-4 text-white d-block bg-black" id="place-order">Place Order</button>
+          <button class="btn mx-4 my-3 bg-success text-white d-block" id="empty-cart">Empty Cart</button>
+      </div>
+    </div>
+    <div id="order-card"></div>
+    <!-- <div class="cart-alert"><h5 class="text-success text-center">Added To Cart Successfully</h5></div> -->
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="JS/Word.js"></script>
+    <script src="JS/header.js"></script>
+    <script src="JS/app.js"></script>
+  </body>
+</html>

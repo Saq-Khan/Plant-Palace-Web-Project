@@ -1,0 +1,267 @@
+ /* NAVBAR */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+ /* body{
+  height: 200vh;
+ } */
+ *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+ }
+ header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    /* background-color: rgb(0, 0, 0); */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: top 0.3s ease-in;
+    z-index: 999;
+    
+ }
+ header::before{
+  content: '';
+  background: url('https://cdn.pixabay.com/photo/2019/12/26/05/16/leaf-4719686_1280.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  filter: brightness(0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+ }
+ header.hide {
+  top: -150px; /* Hide the navbar by moving it off screen */
+}
+ .logo, .logo-container{
+     /* pointer-events: none; */
+     font-weight: 700;
+     font-size: 20px;
+     cursor: pointer;
+     order: 1;
+     position: relative;
+ }
+ nav{
+    order: 0;
+ }
+ .buttons{
+    order: 2;
+}
+.logo-p{
+    position: absolute;
+    font-size: 75px;
+    color: rgba(4, 209, 4, 0.718);
+    left: -55px;
+    top: -30px;
+}
+.account .dropdown:hover svg,#filter:hover svg{
+    color: white;
+    transform: translateY(-3px);
+    transition: .3s ease all;
+    display: inline-block;
+    cursor: pointer;
+    }
+.account .dropdown-menu .dropdown-item:hover{
+    background-color: rgba(238, 233, 233, 0.904)!important;
+    width: inherit;
+    cursor: pointer;
+}
+
+ header a{
+    all: unset;
+ }
+/* DROPDOWN */
+
+/* hover dropdown menu */
+/* .dropdown:hover ~ .nav-dropdown .dropdown-menu{
+    display: block;
+} */
+.dropdown.show ~ .nav-dropdown .dropdown-menu{
+    display: flex;
+}
+hr{
+    position: relative;
+    z-index: 0 !important;}
+.nav-dropdown .dropdown-menu{
+    /* background: blue !important; */
+    width: calc(100vw - 70px);
+    height: auto;
+    /* flex-wrap: wrap; */
+    z-index: 2 !important;
+    margin: 10px;
+}
+.category{
+    transition: .3s ease all;
+}
+.category-name{
+    margin-bottom: 20px;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+}
+.category:hover{
+    background-image: linear-gradient(to bottom, rgba(239, 240, 239, 0.911), white) !important;
+}
+.cat-item{  
+    padding: 8px;
+    cursor: pointer;
+}
+.cat-item:hover{
+    color: black;
+    font-weight: 600;
+}
+/* DROPDOWN TOGGLE */
+.hamburger {
+    cursor: pointer;
+  }
+  .hamburger input {
+    display: none;
+  }
+  .hamburger svg {
+    height: 2em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  /* .hamburger input:checked + svg {
+    transform: rotate(-45deg);
+  }
+  .hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  } */
+
+
+
+  /* BREADCRUMB */
+  .breadcrumb-container{
+    height: 350px;
+    /* border: 2px solid red; */
+  }
+  .breadcrumb-img{
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    left: 0;
+    filter: brightness(.4);
+  }
+  .breadcrumb{
+    height: 430px;
+  }
+  .breadcrumb-home,.breadcrumb-account,.breadcrumb-register{
+    font-weight: 600 ;
+    font-family: monospace;
+  }
+
+
+  /* FORM VALIDATION */
+  form input:focus{
+    outline: none !important;
+}
+  form input[type='text']:not(:focus):not(:placeholder-shown):valid, form input[type='email']:not(:focus):not(:placeholder-shown):valid,form input[type='password']:not(:focus):not(:placeholder-shown):valid{
+    outline:1px solid green;
+}
+form input[type='text']:not(:focus):not(:placeholder-shown):invalid, form input[type='email']:not(:focus):not(:placeholder-shown):invalid,form input[type='password']:not(:focus):not(:placeholder-shown):invalid{
+  outline:1px solid red;
+}
+form input[type='password']:not(:focus):not(:placeholder-shown):invalid ~ #passError{
+  color: red;
+}
+.passfelid{
+  position: relative;
+}
+.togglePassword{
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  cursor: pointer;
+}
+  /* MEDIA QUERY */
+  @media screen and (max-width:630px){
+    .dropdown.show ~ .nav-dropdown .dropdown-menu{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+  }
+  @media screen and (max-width:450px){
+    .dropdown.show ~ .nav-dropdown .dropdown-menu{
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-template-rows: 3;
+        text-align: center;
+        max-height: 80vh;
+        overflow-y: auto;
+
+    }
+  }
+
+  /* FOOTER */
+  #Footer{
+    background-color: rgb(0, 0, 0);
+    position: relative;
+  
+  }
+  
+  #Footer a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  /* #Footer::before{
+    content: '';
+    background: url('https://cdn.pixabay.com/photo/2019/12/26/05/16/leaf-4719686_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    filter: brightness(0.7);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+   } */
+  .AnchorLinks a:hover{
+    color: white;
+  }
+  /* .social-link{
+    fill: grey;
+  } */
+
+  #order-card{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    z-index: 1100;
+    border-radius: 10px;
+    box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.442);
+    display: none;
+
+  }
+  #order-card-content{
+    border-radius: 12px;
+  }

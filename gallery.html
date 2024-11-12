@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plant Palace - Gallery</title>
+    <link rel="shortcut icon" href="./assets/favicon/plant.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <link rel="stylesheet" href="CSS/style.css">
+  </head>
+      <style>
+#Gallery-section .card-img-top{
+      border-radius:10px;
+    }
+#Gallery-section .card:hover img{
+  transform: scale(1.07);
+  transition: 0.5s ease all;
+    }
+
+     #Gallery-section .card {
+    position: relative;
+    border-radius: 5px;
+    /* min-height: 300px; */
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  #Gallery-section .card img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px; 
+    filter: brightness(1);
+    border-radius: 5px;
+
+  }
+
+  #Gallery-section .card-body {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    padding: 10px; 
+    text-align: center; 
+  }
+
+  #Gallery-section .card-body p {
+    margin-bottom: 10px;
+  }
+
+  #Gallery-section .card-body a , p {
+    color: hsl(0, 16%, 96%);
+    text-decoration: none;
+    transition: 0.2s ease all;
+
+  }
+
+
+  /* #Gallery-section .card-body   a:hover {
+    visibility: visible;
+    color: hsl(0, 0%, 90%);
+  }
+
+  #Gallery-section .card-body  p:hover {
+    color: hsl(0, 0%, 90%);
+  } */
+
+#BodyHead{
+  font-weight: bolder;
+  font-size: 46px;
+  color: rgba(4, 209, 4, 0.718);
+  text-shadow: 5px 2px 8px rgba(123, 123, 123, 0.614);
+  text-align: center;
+}
+
+#modaall p{
+  color: black;
+}
+.add-to-cart-btn{
+  width: 100%;
+}
+.cart-alert{
+  position: fixed;
+  top: 20%;
+  right: -100%;
+  background-color: white;
+  color: green;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1100;
+  transition: .5s ease all;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.cart-alert.active{
+  right: 0;
+}
+.card-img-overlay{
+  transform: translateY(100%);
+  opacity: 0;
+  transition: 0.3s ease all;
+}
+.card{
+  border: 4px solid #F7F7F7;
+  box-shadow:-15px -15px 20px rgba(255, 255, 255, 0.637), 10px 10px 20px rgba(128, 128, 128, 0.459);
+}
+.card:hover .card-img-overlay{
+  transform: translateY(0);
+  opacity: 1;
+}
+#Gallery-section .card:hover img{
+  border-radius: 5px;
+  filter: brightness(.5);
+}
+.modal-body img{
+  margin-bottom: 10px;
+}
+.m-content-main{
+  padding: 20px;
+}
+    </style> 
+
+ <body>
+
+
+  <header>
+    <a href="Home.html" style="cursor: pointer;user-select: none;position: relative;" class="logo-container"><span class="logo-p">P</span>LANT<br>ALACE<img src="assets/images/plant.png" width="85" class="logo d-inline" style="position: absolute; top: -25px; right: -66px;" alt=""></a>
+    <nav>
+        <div class="navbar">
+            <button class="dropdown btn text-white" type="button" data-bs-toggle="dropdown" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <label class="hamburger">
+                    <!-- <input type="checkbox"> -->
+                    <svg viewBox="0 0 32 32">
+                      <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                      <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                  </label> MENU
+                </button>
+              <div class="nav-dropdown" id="navbarNavAltMarkup">
+                <div class="dropdown-menu">
+                  <ul class="dropdown-item list-unstyled category" href="#">
+                    <span class="category-name">Home</span>
+                        <a href="Home.html#Catogries"><li class="cat-item">Top Catogries</li></a>
+                        <a href="Home.html#FeaturedSection"><li class="cat-item">Featured</li></a>
+                        <a href="Home.html#Testimonials"><li class="cat-item">Overview</li></a>
+                        <a href="Home.html#SpecialSection"><li class="cat-item">Specials</li></a>
+                  </ul>
+                  <ul class="dropdown-item list-unstyled category" href="#">
+                    <span class="category-name">Gallery</span>
+                        <a href="gallery.html"><li class="cat-item">Nursery</li></a>
+                        <a href="gallery.html#indoor"><li class="cat-item">Indoor Plants</li></a>
+                        <a href="gallery.html#outdoor"><li class="cat-item">Outdoor Plants</li></a>
+                        <a href="gallery.html#flower"><li class="cat-item">Flowering Shrubs</li></a>
+                  </ul>
+                  <ul class="dropdown-item list-unstyled category" href="#">
+                    <span class="category-name">Site Links</span>
+                        <a href="AboutUs.html"><li class="cat-item">About Us</li></a>
+                        <a href="register.html"><li class="cat-item">Register</li></a>
+                        <a href="login.html"><li class="cat-item">Login</li></a>
+                                                    <a href="sitemap.html"><li class="cat-item">Sitemap</li></a>
+
+                  </ul>
+                </div>
+              </div>
+        </div>
+    </nav>
+    <div class="buttons">
+        <span class="account">
+            <a class="dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"  class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                </svg>
+            </a>
+            <ul class="dropdown-menu mt-4">
+              <li><a class="dropdown-item" href="register.html">Register</a></li>
+              <li><a class="dropdown-item" href="login.html">Log in</a></li>
+              <li><a class="dropdown-item" href="feedback.html">Feedback</a></li>
+            </ul>
+        </span>
+        <span id="cart" class="mx-3 my-2">
+            <span id="filter" data-bs-toggle="offcanvas" data-bs-target="#orderCart">
+                <!-- <img class="cart-streaks" src="img/menu.png" width="19" alt=""> -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                </svg>
+            </span>
+        </span>
+    </div>
+
+  </header> 
+
+    <h1 id="BodyHead" class="" style="margin-top: 150px;">PLANTS GALLERY</h1>
+     <section id="Gallery-section" class="mt-5">
+      <div class="container mt-5">
+
+       <!-- row 1 start -->
+      <div class="row mt-3" id="indoor">
+        <h3 id="BodyHead" style="font-size: 30px; text-align: left; padding-left: 15px;">Indoor Plants</h3>
+        <!-- box1 start -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-1 mt-2 col-md-6 col-sm-12">
+          <div class="card" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="./img/spider-plant.png" class="card-img-top">
+
+              <div class="card-body card-img-overlay align-content-end">
+                <p>
+                  <strong>Plant-name</strong>: Spider-plant <br>
+                  <strong>Category</strong>: Indoor Plant <br>
+                  <strong>Price</strong>: 3000
+                </p>
+              </div>
+          </div>
+        </div>
+     <!-- box1 end -->
+
+   <!-- box2 start -->
+    <div class=" col-lg-3 col-md-6 col-sm-12 mt-1 col-md-6 col-sm-12">
+    <!-- boxed2 start -->
+      <div class="card"  data-bs-toggle="modal" data-bs-target="#exampleModal2">
+      <img src="./img/peace-lily.png">
+        <div class="card-body card-img-overlay align-content-end">
+        <p><strong>Category</strong>: Indoor Plant <br>
+          <strong>Plant-name</strong>: Peace-Lily <br>
+          <strong>Price</strong>: 6000
+        </p>
+      
+    
+        </div>
+      </div>
+        
+   
+    </div>
+   <!--box2 end  -->
+
+
+    <!-- box3 start -->
+    <div class="col-lg-3 col-md-6 col-sm-12 mt-1 col-md-6 col-sm-12">
+
+      <div class="card " data-bs-toggle="modal" data-bs-target="#snakeModal">
+        <img src="./img/snake-plant.png">
+          <div class="card-body card-img-overlay align-content-end">
+          <p>
+            <strong>Category</strong>: Indoor Plant <br>
+            <strong>Plant-name</strong>: Snake Plant <br>
+            <strong>Price</strong>: 5000
+          </p>
+
+          </div>
+   
+      </div>
+    </div>
+    <!-- box3 end -->
+
+    <!-- box4 start -->
+    <div class=" col-lg-3 col-md-6 col-sm-12 mt-1 col-md-6 col-sm-12">
+
+        <div class="card"   data-bs-toggle="modal" data-bs-target="#pothos">
+        <img src="./img/pothos.png">
+          <div class="card-body card-img-overlay align-content-end">
+          <p><strong>Category</strong>: Indoor Plant <br>
+            <strong>Plant-name</strong>: Pothos Golden <br>
+        
+            <strong>Price</strong>: 10500
+          </p>
+          </div>
+        </div>
+    </div>
+      </div>
+    <!-- row1  end -->
+
+
+
+<!-- row2 indoor start -->
+   <div class="row mt-3 ">
+    <!-- box1 start -->
+    <div class="col-lg-3 col-md-6 col-sm-12 mt-1 col-md-6 col-sm-12">
+      <div class="card" id="collection" data-bs-toggle="modal" data-bs-target="#Zamolicious">
+        <img src="./img/zz plant.png" >
+        <div class="card-img-overlay  align-content-center">
+          <div class="card-body card-img-overlay align-content-end">
+            <p> 
+              <strong>Category</strong>: Indoor Plant <br>
+              <strong>Plant name :</strong>Zamolicious zz Plant<br>
+              <strong>Price</strong>: 10500
+          </p>
+          </div>
+        </div>
+      </div>
+    
+  
+    </div>
+    <!-- box1 end -->
+
+    <!-- box2 start -->
+    <div class=" col-lg-3 col-md-6 col-sm-12 mt-1 col-md-6 col-sm-12">
+      <!-- boxed2 start -->
+      <div class="card " data-bs-toggle="modal" data-bs-target="#Rubber">
+        <img src="./img/rubber-plant.png">
+        <div class="card-body card-img-overlay align-content-end">
+          <p><strong>Category</strong>: Indoor Plant <br>
+            <strong>Plant-name</strong>: Rubber-plant <br>
+            <strong>Price</strong>: 12000
+          </p>
+          
+    
+          </div>
+ 
+      </div>
+    </div>
+    <!--box2 end  -->
+
+
+    <!-- box3 start -->
+    <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+      <!-- boxed3 start -->
+      <div class="card " data-bs-toggle="modal" data-bs-target="#Devil">
+        <img src="./img/devil ivy.png">
+         <div class="card-body card-img-overlay align-content-end">
+          <p><strong>Category</strong>: Indoor Plant <br>
+            <strong>Plant-name</strong>: Devil's Ivy <br>
+          
+            <strong>Price</strong>: 4000
+          </p>
+
+          </div>
+
+   
+      </div>
+    </div>
+    <!-- box3 end -->
+
+    <!-- box4 start -->
+    <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+      <!-- boxed4 start -->
+      <div class="card"  data-bs-toggle="modal" data-bs-target="#Chinese1">
+        <img src="./img/chinese evergeen.png"
+          >
+          <div class="card-body card-img-overlay align-content-end">
+          <p><strong>Category</strong>: Indoor Plant <br>
+            <strong>Plant-name</strong>: Chinese Evergreen<br>
+            <!--  -->
+            <strong>Price</strong>: 2000
+          </p>
+      
+
+          </div>
+
+       
+      </div>
+    </div>
+
+    </div>
+
+  <!-- row2 indoor end -->
+
+
+
+      <!-- row3 outdoor start -->
+      <div class="row mt-3 " id="outdoor">
+        <h3 id="BodyHead" style="font-size: 30px; text-align: left; padding-left: 15px; margin-bottom: 30px; margin-top: 50px;">Outdoor Plants</h3>
+
+        <!-- box 1 start  -->
+          <div class="box col-lg-3 col-md-6 col-sm-12 mt-1">
+            <!-- boxed4 start -->
+            <div class="card "  data-bs-toggle="modal" data-bs-target="#Azalea">
+              <img src="./img/Azalea.jpg">
+              <div class="card-body card-img-overlay align-content-end">
+                <p><strong>Category</strong>:Flowering Shrubs <br> 
+               <strong>Plant-name</strong>: Azalea<br>
+            <strong>Price</strong>: 2500
+
+               </p>
+ 
+                </div>
+
+            </div>
+          </div>
+          <!-- box1 end -->
+
+        <!-- box2 start -->
+        <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+          <div class="card"  data-bs-toggle="modal" data-bs-target="#Lavender">
+            <img src="./img/Lavender.png">
+            <div class="card-body card-img-overlay align-content-end">
+              <p><strong>Category</strong>: Outdoor Plant<br>
+             <strong>Plant-name</strong>: Lavender<br>
+
+             <strong>Price</strong>: 1500
+            </p>
+
+        
+            </div>
+  
+          </div>
+        </div>
+        <!--box2 end  -->
+
+
+        <!-- box3 start -->
+        <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+          <div class="card " data-bs-toggle="modal" data-bs-target="#sunflower">
+            <img src="./img/Sunflower.png">
+            <div class="card-body card-img-overlay align-content-end">
+              <p><strong>Category</strong>: Outdoor Plant <br> 
+             <strong>Plant-name</strong>: Sun flower <br>
+             <strong>Price</strong>: 500
+              </p>
+            
+            </div>
+
+          </div>
+        </div>
+        <!-- box3 end -->
+
+        <!-- box4 start -->
+        <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+          <div class="card "  data-bs-toggle="modal" data-bs-target="#Tulip">
+            <img src="./img/Tulip.png">
+              <div class="card-body card-img-overlay align-content-end">
+              <p><strong>Category</strong>: Outdoor Plant <br> 
+             <strong>Plant-name</strong>: Tulip<br>
+
+             <strong>Price</strong>: 4000
+              </p>       
+           
+              </div>
+ 
+          </div>
+        </div>
+      </div>
+      <!-- row3 outdoor end -->
+
+
+<!-- row4 outdoor start -->
+<div class="row mt-3 ">
+  <!-- box1 start -->
+  <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+    <div class="card" id="shop" data-bs-toggle="modal" data-bs-target="#Echeveira">
+      <img src="./img/Echeveira.jpg">
+        <div class="card-body card-img-overlay align-content-end">
+        <p>Category</strong>: Outdoor Plant <br>
+          <strong>Plant-name</strong>: Echeveira <br>
+          <strong>Price</strong>: 6000
+
+        </p>
+      
+    
+        </div>
+ 
+    </div>
+  </div>
+  <!-- box1 end -->
+
+  <!-- box2 start -->
+  <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+    <!-- boxed2 start -->
+    <div class="card" data-bs-toggle="modal" data-bs-target="#Sempervivum">
+      <img src="./img/Sempervivum.jpg">
+        <div class="card-body card-img-overlay align-content-end">
+        <p><strong>Category</strong>: Succulent Plant<br>
+       <strong>Plant-name</strong>: Sempervivum<br>
+       <strong>Price</strong>: 6000
+
+      </p>
+
+        </div>
+
+    </div>
+  </div>
+  <!--box2 end  -->
+
+
+  <!-- box3 start -->
+  <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+    <!-- boxed3 start -->
+    <div class="card" data-bs-toggle="modal" data-bs-target="#Crassula">
+      <img src="./img/Crassula.jpg">
+      <div class="card-body card-img-overlay align-content-end ">
+        <p><strong>Category</strong>: Succulent Plant <br> 
+       <strong>Plant-name</strong>: Crassula <br>
+       <strong>Price</strong>: 10600
+
+        </p>
+    
+      </div>
+
+ 
+    </div>
+</div>
+  <!-- box3 end -->
+
+  <!-- box4 start -->
+  <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+     <div class="card"  data-bs-toggle="modal" data-bs-target="#AloeVera">
+      <img src="./img/Aleo Vera.jpg">
+        <div class="card-body card-img-overlay align-content-end">
+        <p><strong>Category</strong>: Succulent Plant <br> 
+       <strong>Plant-name</strong>: Aloe Vera<br>
+       <strong>Price</strong>: 3000
+
+        </p>
+
+        </div>
+ 
+
+     </div>
+  </div>
+
+</div>
+  <!-- row4 outdoor end -->
+
+  
+  <!-- row5 outdoor start -->
+  <div class="row mt-3 " id="flower">
+    <h3 id="BodyHead" style="font-size: 30px; text-align: left; padding-left: 15px; margin-bottom: 30px; margin-top: 50px;">Flowering Shrubs</h3>
+    <!-- box1 start -->
+    <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+      <div class="card" data-bs-toggle="modal" data-bs-target="#Forsythia">
+        <img src="./img/Forsythia.jpg">
+        <div class="card-body card-img-overlay align-content-end">
+          <p><strong>Category</strong>: Flowering Shrubs <br>
+        <strong>Plant-name</strong>: Forsythia<br>
+        <strong>Price</strong>: 12000</p>
+
+
+          </div>
+        </div>
+
+   
+    </div>
+    <!-- box1 end -->
+
+    <!-- box2 start -->
+    <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+      <div class="card"  data-bs-toggle="modal" data-bs-target="#Rhododendron">
+        <img src="./img/Rhododendron.jpg">
+        <div class="card-body card-img-overlay align-content-end">
+          <p><strong>Category</strong>:Flowering Shrubs <br>
+         <strong>Plant-name</strong>: Rhododendron <br>
+         <strong>Price</strong>: 1200</p>
+
+        </div>
+      </div>
+ 
+      </div>
+
+    <!--box2 end  -->
+
+
+    <!-- box3 start -->
+    <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+      <!-- boxed3 start -->
+      <div class="card " data-bs-toggle="modal" data-bs-target="#Spirea">
+        <img src="./img/Spirea.jpg">
+          <div class="card-body card-img-overlay align-content-end">
+          <p><strong>Category</strong>: Flowering Shrubs<br>
+         <strong>Plant-name</strong>:Spirea <br>
+         <strong>Price</strong>: 7000
+
+         </p>
+
+
+          </div>
+        </div>
+
+      <!-- boxed3 end -->
+    </div>
+    <!-- box3 end -->
+
+    <!-- box4 start -->
+    <div class=" col-lg-3 col-md-6 col-sm-12 mt-1">
+      <!-- boxed4 start -->
+        <div class="card"  data-bs-toggle="modal" data-bs-target="#Haw">
+        <img src="./img/Haworthia.jpg">
+        <div class="card-body card-img-overlay align-content-end">
+          <p><strong>Category</strong>: Flowering Shrubs <br>
+         <strong>Plant-name</strong>: Haworthia <br>
+         <strong>Price</strong>: 4500
+
+         </p>
+  
+          </div>
+        </div>
+
+    </div>
+    <!-- box4 end -->
+  </div>
+  <!-- row5 outdoor end -->
+
+</div>
+
+
+
+<div id="modaall">
+
+
+
+       <!-- modal1 start -->
+       <div class="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+           <div class="modal-content">
+            <div class="modal-header" style="text-align: center;">
+               <h1 class="modal-title fs-5 productName" id="exampleModalLabel">Spider Plant</h1>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+           
+            <div class="modal-body">
+              <img src="./img/spider-plant.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+              <div class="m-content-main">
+                <p><strong>Category</strong>: Indoor Plants </p> 
+              <p><strong>Plant-name</strong>: Spider Plant </p> 
+              <p><strong>Price</strong>: <span class="productPrice">3000</span></p>
+              <p><strong>Light</strong>: Bright, indirect light</p>
+              <p><strong>Water</strong>: Allow soil to dry between waterings</p>
+              <p><strong>Size</strong>: Medium, up to 2 feet</p>
+              <p><strong>Blooms</strong>: Occasional small white flowers</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+           <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+            </div>
+           </div>
+         </div>
+       </div>
+
+
+
+     <!--peace lily Modal start -->
+     <div class="modal fade" id="exampleModal2" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+       <div class="modal-content">
+         <div class="modal-header" style="text-align: center;">
+           <h1 class="modal-title fs-5 productName" id="exampleModalLabel">Peace Lily</h1>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <!-- <img class="modal-image" /> -->
+        
+
+         <div class="modal-body">
+           <img src="./img/peace-lily.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+           <div class="m-content-main"><p><strong>Category</strong>: Indoor Plants </p> 
+            <p><strong>Plant-name</strong>:<strong> Peace Lily</strong>  </p>
+         
+            <p><strong>Price</strong>:<span class="productPrice">6000</span></p>
+            <p><strong>Light</strong>: Bright, indirect light</p>
+            <p><strong>Water</strong>: Peace lilies prefer consistently moist but not soggy soil; water when the top inch of soil feels dry.</p>
+            <p><strong>Size</strong>: Typically grows 1 to 4 feet (30 to 120 cm) in height, depending on the variety and growing conditions.</p>
+            <p><strong>Blooms</strong>: Peace lilies produce elegant white, spoon-shaped blooms that resemble a white flag, usually in spring and sometimes throughout the year when well-cared for.</p></div>
+          </div>
+          <div class="modal-footer">
+           <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+
+        <!--snake Modal start -->
+        <div class="modal fade" id="snakeModal"  aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header" style="text-align: center;">
+              <h1 class="modal-title fs-5 productName">Snake Plant</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- <img modal-->
+            <div class="modal-body">
+              <img src="./img/snake-plant.png" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+              <div class="m-content-main">
+                <p><strong>Category</strong>: Indoor Plants </p> 
+              <p><strong>Plant-name</strong>:<strong> Snake Plant</strong>  </p>
+              
+              <p><strong>Price</strong>: <span class="productPrice">5000</span></p>
+              <p><strong>Light</strong>:Snake plants tolerate a range of light conditions, from low to bright indirect light.</p>
+              <p><strong>Water</strong>: Snake plants thrive on low water; allow the soil to dry out between waterings, water sparingly.</p>
+              <p><strong>Size</strong>:  Varies by species and cultivar, but generally grows 1 to 4 feet (30 to 120 cm) in height.</p>
+              <p><strong>Blooms</strong>: Snake plants occasionally produce small, greenish-white flowers on tall stalks, but flowering is rare and not a significant feature of the plant.</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+          <!--pothos Modal start -->
+          <div class="modal fade" id="pothos" aria-labelledby="exampleModalLabela"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header" style="text-align: center;">
+                <h1 class="modal-title fs-5 productName">Pothos Golden</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             
+
+              <div class="modal-body">
+                <img src="./img/pothos.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+                <div class="m-content-main"> <p><strong>Category</strong>: Indoor Plants </p> 
+                  <p><strong>Plant-name</strong>:<strong> Pothos Golden</strong>  </p>
+                  
+                  <p><strong>Price</strong>: <span class="productPrice">10500</span></p>
+                  <p><strong>Light</strong>:Pothos Golden thrives in moderate to low indirect light but can tolerate some bright light.</p>
+                  <p><strong>Water</strong>:Allow the top inch of soil to dry before watering; prefers slightly dry conditions.</p>
+                  <p><strong>Size</strong>: Typically grows 6 to 10 feet (1.8 to 3 meters) in length when mature.</p>
+                  <p><strong>Blooms</strong>: Rarely blooms indoors; if it does, small greenish spathes are produced on mature plants.</p></div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+
+              </div>
+            </div>
+          </div>
+       </div>
+        <!-- snake modal end -->
+
+    <!-- Zamolicious modal start -->
+    <div class="modal fade" id="Zamolicious" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+   <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5 productName">Zamolicious zz Plant</h1>
+
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <img src="./img/pothos.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+      <div class="m-content-main">
+        <p><strong>Category</strong>: Indoor Plants </p> 
+      <p><strong>Plant-name</strong>:<strong> Zamolicious zz Plant</strong>  </p>
+      
+      <p><strong>Price</strong>: <span class="productPrice">10500</span></p>
+      <p><strong>Light</strong>:Pothos Golden thrives in moderate to low indirect light but can tolerate some bright light.</p>
+      <p><strong>Water</strong>:Allow the top inch of soil to dry before watering; prefers slightly dry conditions.</p>
+      <p><strong>Size</strong>: Typically grows 6 to 10 feet (1.8 to 3 meters) in length when mature.</p>
+      <p><strong>Blooms</strong>: Rarely blooms indoors; if it does, small greenish spathes are produced on mature plants.</p>
+      </div>
+    </div>
+     <div class="modal-footer">
+      <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+
+     </div>
+   </div>
+ </div>
+</div>
+
+
+
+
+         <!-- rubbermodal start -->
+          
+         <div class="modal fade" id="Rubber"  aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h1 class="modal-title fs-5 productName" id="exampleModalLabel">Rubber Plant</h1>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+               <img src="./img/rubber-plant.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+               <div class="m-content-main">
+                <p><strong>Category</strong>: Indoor Plants </p> 
+               <p><strong>Plant-name</strong>:<strong>Rubber Plant</strong>  </p>
+              
+               <p><strong>Price</strong>:<span class="productPrice">12000</span></p>
+               <p><strong>Light</strong>: Rubber plants prefer bright indirect light, but can adapt to lower light conditions.</p>
+               <p><strong>Water</strong>:Allow the top inch of soil to dry before watering; water moderately, avoiding waterlogged soil.</p>
+               <p><strong>Size</strong>: Can grow up to 6 to 10 feet (1.8 to 3 meters) tall indoors, depending on the variety and care.</p>
+               <p><strong>Blooms</strong>:  RRarely blooms indoors; mature plants may produce small, inconspicuous flowers.</p>
+               </div>
+
+             </div>
+             <div class="modal-footer">
+              <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+
+       <!--DevilIvymodal start -->
+          
+       <div class="modal fade" id="Devil" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h1 class="modal-title fs-5 productName" id="exampleModalLabel">Devil's Ivy Plant</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             <img src="./img/devil ivy.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+             <div class="m-content-main">
+              <p><strong>Category</strong>: Indoor Plants </p> 
+             <p><strong>Plant-name</strong>:<strong>Devil's Ivy Plant</strong>  </p>
+          
+             <p><strong>Price</strong>: <span class="productPrice">4000</span></p>
+             <p><strong>Light</strong>:  Devil's Ivy (Pothos) thrives in a variety of light conditions, from low to bright indirect light.</p>
+             <p><strong>Water</strong>:Allow the top inch of soil to dry before watering; water moderately, avoiding over-watering.</p>
+             <p><strong>Size</strong>: Can grow up to 6 to 10 feet (1.8 to 3 meters) tall indoors, depending on the variety and care.</p>
+             <p><strong>Blooms</strong>: Rarely blooms indoors; if it does, small spathes with greenish-white flowers may appear.</p>
+
+             </div>
+
+           </div>
+           <div class="modal-footer">
+            <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+
+
+  <!--chinesemodal start -->
+  <div class="modal fade" id="Chinese1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 productName" id="exampleModalLabel">Chinese Evergreen</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./img/chinese evergeen.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+                <div class="m-content-main">
+                  <p><strong>Category</strong>: Indoor Plants </p> 
+                  <p><strong>Plant-name</strong>:<strong>Chinese Evergreen</strong>  </p>
+          
+                  <p><strong>Price</strong>: <span class="productPrice">2000</span></p>
+                  <p><strong>Light</strong>:  Chinese Evergreen (Aglaonema) thrives in low to moderate indirect light and can adapt to lower light conditions.</p>
+                  <p><strong>Water</strong>:Allow the top inch of soil to dry before watering; water moderately, avoiding waterlogging.</p>
+                  <p><strong>Size</strong>:Typically grows 1 to 3 feet (30 to 90 cm) in height, with attractive patterned leaves.</p>
+                  <p><strong>Blooms</strong>:  Occasionally produces small, inconspicuous flowers, but it's primarily grown for its foliage.</p>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Tulipmodal start -->
+
+<div class="modal fade" id="Azalea" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5 productName" id="exampleModalLabel">Azalea</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <img src="./img/Azalea.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+              <div class="m-content-main">
+                <p><strong>Category</strong>: Flowering Shrubs </p> 
+                <p><strong>Plant-name</strong>:<strong>Azalea</strong>  </p>
+                <p><strong>Price</strong>: <span class="productPrice">2500</span></p>
+                <p><strong>Light</strong>:    Azalea thrives in bright indirect light to full sun, needing around 6 hours of direct sunlight daily.</p>
+                <p><strong>Water</strong>:Allow the soil to dry out completely between waterings; water sparingly to prevent over-watering.</p>
+                <p><strong>Size</strong>:Typically grows in rosettes, varying in size from small indoor plants to larger specimens up to 2 feet (60 cm) tall.</p>
+                <p><strong>Blooms</strong>:Known for their tall flower spikes that bear tubular, orange or yellow flowers.</p>
+              </div>
+      </div>
+    <div class="modal-footer">
+    <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+            <!--lavendarmodal start -->
+            <div class="modal fade" id="Lavender" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 productName" id="exampleModalLabel">Lavender</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img src="./img/Lavender.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+                  <div class="m-content-main">
+                    <p><strong>Category</strong>: Outdoor Plants </p> 
+                  <p><strong>Plant-name</strong>:<strong>Lavender</strong>  </p>
+                  <p><strong>Botanical-name</strong>: <strong> <u>Lavandula</u></strong> </p>
+                  <p><strong>Price</strong>: <span class="productPrice">1500</span></p>
+                  <p><strong>Light</strong>:   Lavender thrives in full sun, requiring at least 6 to 8 hours of direct sunlight per day.</p>
+                  <p><strong>Water</strong>:Allow the soil to dry out between waterings; prefers well-draining soil to prevent root rot.</p>
+                  <p><strong>Size</strong>:Typically grows as a compact shrub, reaching heights of 1 to 3 feet (30 to 90 cm).</p>
+                  <p><strong>Blooms</strong>:  Produces spikes of fragrant, purple-blue flowers during its blooming season.</p>
+                  <p><strong>Origin Country</strong>:     Lavender is native to the Mediterranean region, including countries like France, Spain, and Italy.</p>
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- lavendarmodal end -->
+
+
+
+           <!--sunflowermodal start -->
+           <div class="modal fade" id="sunflower" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h1 class="modal-title fs-5 productName" id="exampleModalLabel">Sunflower</h1>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                 <img src="./img/Sunflower.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+                 <div class="m-content-main">
+                  <p><strong>Category</strong>: Outdoor Plants </p> 
+                 <p><strong>Plant-name</strong>:<strong>Sunflower</strong>  </p>
+                 
+                 <p><strong>Price</strong>: <span class="productPrice">500</span></p>
+                 <p><strong>Light</strong>:   Sunflowers thrive in full sun, requiring around 6 to 8 hours of direct sunlight per day.</p>
+                 <p><strong>Water</strong>:Keep the soil consistently moist, especially during the growing season; avoid waterlogged conditions.</p>
+                 <p><strong>Size</strong>:Can vary widely depending on the variety, with heights ranging from a few feet to over 10 feet.</p>
+                 <p><strong>Blooms</strong>:  Known for their large, vibrant yellow flower heads with dark centers, resembling the sun.</p>
+                 </div>
+               </div>
+               <div class="modal-footer">
+                <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+ 
+               </div>
+             </div>
+           </div>
+         </div>
+         <!-- sunflower end -->
+
+
+
+
+            <!--Tulip start -->
+              
+            <div class="modal fade" id="Tulip" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 productName" id="exampleModalLabel">Tulip</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img src="./img/Tulip.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+                  <div class="m-content-main">
+                    <p><strong>Category</strong>: Outdoor Plants </p> 
+                  <p><strong>Plant-name</strong>:<strong>Tulip</strong>  </p>
+              
+                  <p><strong>Price</strong>: <span class="productPrice">4000</span></p>
+                  <p><strong>Light</strong>:   Tulips prefer full sun to part shade, needing at least 6 hours of direct sunlight daily.</p>
+                  <p><strong>Water</strong>:During their active growth, keep the soil consistently moist but not waterlogged; allow it to dry out during dormancy.</p>
+                  <p><strong>Size</strong>:Heights vary depending on the variety, typically ranging from 6 inches to 2 feet (15 to 60 cm).</p>
+                  <p><strong>Blooms</strong>: Renowned for their colorful cup-shaped flowers that come in various hues and patterns.</p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tulip end -->
+
+
+
+   <!--chinesemodal start -->
+   
+   <div class="modal fade" id="Echeveira"  aria-labelledby="exampleModala"
+   aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h1 class="modal-title fs-5 productName" id="exampleLabel">Echeveira</h1>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="./img/Echeveira.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+          <div class="m-content-main"><p><strong>Category</strong>: Succulent Plants </p> 
+            <p><strong>Plant-name</strong>:<strong>Echeveira</strong>  </p>
+            <p><strong>Price</strong>: <span class="productPrice">6000</span></p>
+            
+           <p><strong>Light</strong>:  Echeverias thrive in full sun to part shade, requiring around 4 to 6 hours of direct sunlight daily.</p>
+           <p><strong>Water</strong>: Allow the soil to dry out completely between waterings; water sparingly to prevent root rot.</p>
+           <p><strong>Size</strong>:Typically grows as compact rosettes, ranging from a few inches to around 1 foot (8 to 30 cm) in diameter.</p>
+           <p><strong>Blooms</strong>:  Known for their bell-shaped flowers that appear on tall stalks, showcasing a variety of colors.</p></div>
+
+       </div>
+       <div class="modal-footer">
+        <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+
+       </div>
+     </div>
+   </div>
+   </div>
+ <!-- chinesemodal end -->
+
+
+        <!--Seperviummodal start -->
+        
+        <div class="modal fade" id="Sempervivum" aria-labelledby="exampleModalLabela1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 productName" id="exampl">Sempervivum</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="./img/Sempervivum.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+              <div class="m-content-main">
+                <p><strong>Category</strong>: Succulent Plants </p> 
+              <p><strong>Plant-name</strong>:<strong>Sempervivum</strong>  </p>
+              <p><strong>Price</strong>: <span class="productPrice">6000</span></p>
+              <p><strong>Light</strong>:   Sempervivum spp. thrive in full sun to part shade, needing around 4 to 6 hours of direct sunlight daily.</p>
+              <p><strong>Water</strong>:Allow the soil to dry out between waterings; water sparingly to avoid overly moist conditions.</p>
+              <p><strong>Size</strong>:Typically forms low rosettes, varying from a few inches to around 6 inches (8 to 15 cm) in diameter.</p>
+              <p><strong>Blooms</strong>:   Known for their star-like flowers that emerge on tall stems, showcasing diverse colors.</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!--sunflower modal start -->
+        
+    <div class="modal fade" id="Crassula" aria-labelledby="ModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 productName" id="ModalLabel">Crassula</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="./img/Crassula.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+          <div class="m-content-main">
+            <p><strong>Category</strong>: Succulent Plants </p> 
+          <p><strong>Plant-name</strong>:<strong>Crassula</strong>  </p>
+          <p><strong>Price</strong>: <span class="productPrice">10600</span></p>
+          <p><strong>Light</strong>:   Crassula plants thrive in full sun to bright indirect light, needing around 4 to 6 hours of direct sunlight daily.</p>
+          <p><strong>Water</strong>: Allow the soil to dry out between waterings; water sparingly, as they're drought-tolerant succulents.</p>
+          <p><strong>Size</strong>:Varies based on the species, ranging from small rosettes a few inches wide to larger plants up to 2 feet (60 cm) tall.</p>
+          <p><strong>Blooms</strong>: Known for their clusters of small, star-like flowers in shades of white, pink, or red.</p>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+      <!--Tulip modal start -->
+        
+      <div class="modal fade" id="AloeVera" aria-labelledby="example1"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 productName" id="exampleModalLabel">Aloe Vera</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="./img/Aleo Vera.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+            <div class="m-content-main"><p><strong>Category</strong>: Outdoor Plants </p> 
+              <p><strong>Plant-name</strong>:<strong>Aloe Vera</strong>  </p>
+              <p><strong>Price</strong>: <span class="productPrice">3000</span></p>
+              <p><strong>Light</strong>:    Aloe vera thrives in bright indirect light to full sun, needing around 6 hours of direct sunlight daily.</p>
+              <p><strong>Water</strong>:Allow the soil to dry out completely between waterings; water sparingly to prevent over-watering.</p>
+              <p><strong>Size</strong>:Typically grows in rosettes, varying in size from small indoor plants to larger specimens up to 2 feet (60 cm) tall.</p>
+              <p><strong>Blooms</strong>:Known for their tall flower spikes that bear tubular, orange or yellow flowers.</p></div>
+
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+  
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+         <!--SedumModal start -->
+         <div class="modal fade" id="Forsythia" aria-labelledby="exampleM"
+         aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h1 class="modal-title fs-5 productName" id="exampleM">Forsythia</h1>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+               <img src="./img/Forsythia.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+               <div class="m-content-main"><p><strong>Category</strong>: Flowering Shrubs</p> 
+                <p><strong>Plant-name</strong>:<strong>Forsythia</strong>  </p>
+                <p><strong>Price</strong>: <span class="productPrice">12000</span></p>
+                <p><strong>Light</strong>:   Forsythia plants thrive in full sun to part shade, needing around 4 to 6 hours of direct sunlight daily.</p>
+                <p><strong>Water</strong>: Allow the soil to dry out between waterings; water sparingly as they are drought-tolerant succulents.</p>
+                <p><strong>Size</strong>:Varies widely based on the species, ranging from low-growing ground covers to taller plants up to 2 feet (60 cm) tall.</p>
+                <p><strong>Blooms</strong>:  Known for their clusters of star-shaped flowers in various colors, attracting pollinators.</p></div>
+              
+
+             </div>
+             <div class="modal-footer">
+              <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+   
+             </div>
+           </div>
+         </div>
+         </div>
+       <!-- SedumModal end -->
+
+
+        <!--GeraniumModal start -->
+        <div class="modal fade" id="Rhododendron" aria-labelledby="Labele"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 productName" id="Label">Rhododendron</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="./img/Rhododendron.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+              <div class="m-content-main"><p><strong>Category</strong>: Flowering Shrubs </p> 
+                <p><strong>Plant-name</strong>:<strong>Rhododendron</strong>  </p>
+                <p><strong>Price</strong>: <span class="productPrice">1200</span></p>
+                <p><strong>Light</strong>: Rhododendron thrives in bright indirect light to full sun, needing around 4 to 6 hours of direct sunlight daily.</p>
+                <p><strong>Water</strong>:Allow the soil to dry out between waterings; water sparingly as they prefer well-draining soil.</p>
+                <p><strong>Size</strong>:Varies by species, ranging from compact varieties a few inches tall to larger types up to 2 feet (60 cm) in height.</p>
+                <p><strong>Blooms</strong>: Known for their colorful, bell-shaped flowers that come in shades of red, orange, pink, or yellow.</p>
+    </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+          <!--marigoldModal start -->
+          
+          <div class="modal fade" id="Spirea" aria-labelledby="exa"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5 productName" id="exa">Spirea</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="./img/Spirea.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+                <div class="m-content-main">
+                  <p><strong>Category</strong>: Flowering Shrubs </p> 
+                <p><strong>Plant-name</strong>:<strong>Spirea</strong>  </p>
+                <p><strong>Price</strong>: <span class="productPrice">7000</span></p>
+                <p><strong>Light</strong>: Spirea plants thrive in full sun, requiring around 6 to 8 hours of direct sunlight daily.</p>
+                <p><strong>Water</strong>: Allow the soil to dry out completely between waterings; water sparingly as they are drought-tolerant succulents.</p>
+                <p><strong>Size</strong>: Varies by species, ranging from small rosettes a few inches wide to larger plants with heights up to 10 feet (3 meters).</p>
+                <p><strong>Blooms</strong>: Known for their tall flowering stalks that bear impressive clusters of flowers, often appearing once in their lifetime.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+
+            <!--daisyModal start -->
+          
+            <div class="modal fade" id="Haw"aria-labelledby="exModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 productName" >Haworthia</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img src="./img/Haworthia.jpg" style="width: 100%; height: 300px; object-fit: cover; object-position: center;" alt="">
+                  <div class="m-content-main">
+                    <p><strong>Category</strong>: Succulent Plants </p> 
+                    <p><strong>Plant-name</strong>:<strong>Haworthia</strong>  </p>
+                    <p><strong>Price</strong>: <span class="productPrice">4500</span></p>
+                    <p><strong>Light</strong>: Haworthia plants thrive in bright indirect light to partial shade, needing around 4 hours of direct sunlight daily.</p>
+                    <p><strong>Water</strong>:  Allow the soil to dry out between waterings; water sparingly as they are drought-resistant succulents.</p>
+                    <p><strong>Size</strong>:Typically grows in rosettes, varying in size from small plants a few inches wide to larger ones around 6 inches (15 cm) tall.</p>
+                    <p><strong>Blooms</strong>: Known for their small, tubular white or pink flowers that emerge on thin stems.</p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-dark btn-dark bg-black mx-auto d-block btn-lg add-to-cart-btn">Add to cart</button>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+
+</div>
+
+
+
+    </section>
+
+
+
+    <!-- Footer -->
+    <div class="container-fluid" id="Footer">
+      <footer>
+          <div class="container mt-5 py-5" >
+              <div class="row mt-5" >
+                  <div class="col-md-3 text-center">
+                      <a href="#" class="logo-container"><span class="logo-p">P</span>LANT<br>ALACE<img src="assets/images/plant.png" width="85" class="logo d-inline" style="position: absolute; top: -25px; right: -72px;" alt=""></a>
+                      <p class="text-white mt-3">Majority have suffered alteration in some form, by nature.</p>
+                  </div>
+                  <div class="col-md-3 AnchorLinks">
+                    <h3 class="text-white">Site Links</h3>
+                    <a href="Home.html" class="nav-link">Home</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="Aboutus.html" class="nav-link">About Us</a>
+                    <a href="#" class="nav-link">Site Map</a>
+                    <a href="register.html" class="nav-link">Contact Us</a>
+                </div>
+                <div class="col-md-3 AnchorLinks">
+                    <h3 class="text-white">My Account</h3>
+                    <a href="login.html" class="nav-link">Log In</a>
+                    <a href="register.html" class="nav-link">Register</a>
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                    <a href="#" class="nav-link">Newsletter</a>
+                    <a href="#" class="nav-link">Returns</a>
+                </div>
+                  <div class="col-md-3 AnchorLinks">
+                      <h3 class="text-white">Store Information</h3>
+                      <a href="#" class="nav-link">Demo Store<br>United States</a>
+                      <a href="#" class="nav-link">+92 6658 7114 000 </a>
+                      <a href="#" class="nav-link">Dem@info</a>
+                  </div>
+              </div>
+
+              <div class="row text-center mt-5 mb-5">
+                  <div class="col-md-12">
+                      <a href=""><i><img src="assets/google.png" alt=""></i></a>   
+                      <a href=""><i><img src="assets/maestro.png" alt=""></i></a>   
+                      <a href=""><i><img src="assets/paypal.png" alt=""></i></a>   
+                      <!-- <a href=""><i><img src="assets/visa.png" alt=""></i></a>    -->
+
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12 text-center">
+                      <p class="text-white">Powered By OpenCart Your Store @ 2024</p>
+                  </div>
+              </div>
+              <div class="row text-center" style="background-color: rgba(14, 14, 14, 0.699); border-radius: 20px; padding: 5px;">
+                  <div class="col-md-3">
+                      <a target="_blank" href="https://www.facebook.com/login/" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                        </svg></a>
+                  </div>
+                  <div class="col-md-3">
+                      <a target="_blank" href="https://twitter.com/login" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                          <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h3.36L4.323 2.145H2.865z"/>
+                        </svg></a>
+                  </div>
+                  <div class="col-md-3">
+                      <a target="_blank" href="https://www.google.com.pk/" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                          <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                        </svg></a>
+                  </div>
+                  <div class="col-md-3">
+                      <a target="_blank" href="https://www.instagram.com/accounts/login/" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg></a>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  </div>
+
+
+  <!-- CART -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="orderCart">
+    <div class="offcanvas-header">
+      <h3 class="offcanvas-title">Cart</h3>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="cart-items">
+      </div>
+      <div id="total-amount" class="text-success"></div>
+    </div>
+    <div class="offcanvas-footer d-grid">
+        <button class="btn mx-4 text-white d-block bg-black" id="place-order">Place Order</button>
+        <button class="btn mx-4 my-3 bg-success text-white d-block" id="empty-cart">Empty Cart</button>
+    </div>
+  </div>
+  <div id="order-card"></div>
+<div class="cart-alert">Added to cart successfully</div>
+  <script src="JS/header.js"></script>
+  <script src="JS/app.js"></script>
+
+ </body>
+ </html>
