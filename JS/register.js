@@ -11,7 +11,7 @@ function checkPasswords(event){
     else{
         document.getElementById('matchPass').innerText = "";
         document.querySelector('form').submit();
-        location.href = "Home.html";
+        location.href = "index.html";
         return true;
     }
 }
